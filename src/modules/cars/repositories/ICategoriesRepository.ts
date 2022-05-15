@@ -8,11 +8,11 @@ interface ICreateCategoryDTO {
     description:string;
 }
 
- interface ICategoryRespository{
+ interface ICategoryRepository{
      findByName(name:string):Category;
      list():Category[];
      create({name,description}:ICreateCategoryDTO):void;
 
  }
 
- export {ICategoryRespository, ICreateCategoryDTO}
+ export {ICategoryRepository, ICreateCategoryDTO}

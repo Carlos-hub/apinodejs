@@ -1,7 +1,7 @@
 import { Category } from '../../model/Category';
-import {ICategoryRespository} from '../../repositories/ICategoriesRepository'
+import {ICategoryRepository} from '../../repositories/ICategoriesRepository'
 class ListCategoriesUseCase{
-    constructor(private categoriesRepository:ICategoryRespository){
+    constructor(private categoriesRepository:ICategoryRepository){
 
     }
     execute():Category[]{
