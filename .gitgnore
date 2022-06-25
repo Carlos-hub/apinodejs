@@ -1,2 +1,9 @@
 node_modules/
 yarn-error.log
+
+
+
+
+ sudo docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx
+
+ docker exec "aplication" cat /etc/hosts
