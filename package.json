@@ -15,7 +15,8 @@
     "reflect-metadata": "^0.1.13",
     "require-stack": "^1.0.2",
     "swagger-ui-express": "^4.4.0",
-    "typeorm": "^0.3.6",
+    "tsyringe": "^4.7.0",
+    "typeorm": "0.2.45",
     "uuid": "^8.3.2"
   },
   "scripts": {
