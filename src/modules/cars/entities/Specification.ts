@@ -6,11 +6,11 @@ class Specification{
     @PrimaryColumn()
     id?: string;
     @Column()
-    name: string | undefined;
+    name: string;
     @Column()
-    description:string | undefined;
+    description:string;
     @CreateDateColumn()
-    created_at:Date | undefined;
+    created_at:Date;
 
 
     constructor(){
