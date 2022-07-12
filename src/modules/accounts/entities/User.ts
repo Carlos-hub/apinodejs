@@ -9,15 +9,13 @@ class User{
     @Column()
     name:string;
     @Column()
-    username:string;
-    @Column()
     password:string;
     @Column()
     email:string;
     @Column()
     driver_license:string;
     @Column()
-    idAdmin:boolean;
+    isAdmin:boolean;
     @CreateDateColumn()
     created_at: Date;
 
