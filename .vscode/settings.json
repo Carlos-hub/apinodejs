@@ -13,7 +13,9 @@
         "Gerar",
         "importcategory",
         "Invald",
+        "lcov",
         "middlewares",
+        "minutos",
         "opção",
         "openapi",
         "paravra",
@@ -23,6 +25,7 @@
         "swaggerfile",
         "tsyringe",
         "typeorm",
+        "unmocked",
         "Usuário",
         "webtoken"
     ]
