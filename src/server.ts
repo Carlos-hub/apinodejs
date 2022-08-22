@@ -7,8 +7,8 @@ const app = express();
 import swaggerfile from "./swagger.json"
 
 import './database'
-import "./shared/container/"
-import { AppError } from "./errors/AppError";
+import "@shared/container/"
+import { AppError } from "@errors/AppError";
 app.use(express.json())
 
 app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerfile))
