@@ -1,14 +1,14 @@
-import express, { NextFunction } from "express";
+import express, { NextFunction,Request,Response } from "express";
 import "express-async-errors"
 import "reflect-metadata";
 import { router } from "./routes";
 import swaggerUI from "swagger-ui-express"
 const app = express();
-import swaggerfile from "./swagger.json"
+import swaggerfile from "../../../swagger.json"
 
-import './database'
+import '@shared/infra/typeorm'
 import "@shared/container/"
-import { AppError } from "@errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 app.use(express.json())
 
 app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerfile))

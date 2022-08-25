@@ -23,7 +23,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/server.ts",
+    "start": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev  -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "jest"
   },

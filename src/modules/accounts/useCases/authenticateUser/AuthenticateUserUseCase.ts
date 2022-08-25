@@ -1,10 +1,10 @@
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
-import { UsersRepository} from "@modules/accounts/repositories/implementations/UsersRepository";
+import { UsersRepository} from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { injectable, inject } from "tsyringe";
 
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import { AppError } from "@errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 interface IRequest{
     email:string;
     password:string;
