@@ -30,5 +30,6 @@
         "unmocked",
         "Usuário",
         "webtoken"
-    ]
+    ],
+    "nuxt.isNuxtApp": false
 }

@@ -12,7 +12,7 @@ describe("Create Car",()=>{
         createCarUseCase = new CreateCarUseCase(carsRepositoryInMemory);
 
     })
-    it("Should ble able to create a new car", async ()=>{
+    it("Should be able to create a new car", async ()=>{
         const car = await createCarUseCase.execute({
             name:"name",
             description:"description", 
@@ -21,9 +21,8 @@ describe("Create Car",()=>{
             fine_amount:60, 
             brand:"Brand", 
             category_id:"category",
-        });
-        console.log(car);
-        expect(car).toHaveProperty("id");
+        })
+        expect(car).toHaveProperty("name")
     });
     it("should not be able to create a car with exists license plate",() =>{
         expect(async ()=>{

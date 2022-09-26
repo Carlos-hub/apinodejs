@@ -3,12 +3,13 @@ import "express-async-errors"
 import "reflect-metadata";
 import { router } from "./routes";
 import swaggerUI from "swagger-ui-express"
-const app = express();
 import swaggerfile from "../../../swagger.json"
 
-import '@shared/infra/typeorm'
+import createConnection from '@shared/infra/typeorm'
 import "@shared/container/"
 import { AppError } from "@shared/errors/AppError";
+const app = express();
+createConnection();
 app.use(express.json())
 
 app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerfile))
