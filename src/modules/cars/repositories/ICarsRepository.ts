@@ -10,6 +10,7 @@ interface ICarsRepository{
         category_id?:string,
         name?:string
     ):Promise<Cars[]>
+    findById(id:string):Promise<Cars>
 }
 
 export {ICarsRepository}

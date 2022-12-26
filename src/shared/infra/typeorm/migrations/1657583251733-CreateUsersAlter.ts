@@ -10,7 +10,8 @@ export class CreateUsersAlter1657583251733 implements MigrationInterface {
                     {
                         name:"id",
                         type:"uuid",
-                        isUnique: true
+                        isUnique: true,
+                        isPrimary:true
                     },
                     {
                         name: "name",
