@@ -1,10 +1,10 @@
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
+
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 import { AppError } from "@shared/errors/AppError";
+import dayjs from "dayjs";
+import { inject, injectable } from "tsyringe";
 
-dayjs.extend(utc)
 
 
 
@@ -13,10 +13,13 @@ interface IRequest{
  car_id:string;
  expected_return_date:Date;
 }
-
+@injectable()
 class CreateRentalUseCase{
  constructor(
-  private rentalsRepository:IRentalsRepository
+  @inject("RentalsRepository")
+  private rentalsRepository:IRentalsRepository,
+  @inject("DayjsDateProvider")
+  private dateProvider: IDateProvider
  ){}
  async execute({user_id,car_id,expected_return_date}:IRequest):Promise<Rental>{
   // Não deve ser possível cadastrar um novo aluguel caso já exista um aluguel aberto para o mesmo carro.
@@ -33,9 +36,11 @@ class CreateRentalUseCase{
  }
 
  //   O aluguel deve ter duração minima de 24 horas.
- const expectedReturnDateFormat = dayjs(expected_return_date).utc().local().format()
- const dateNow = dayjs().utc().local().format()
- const compare =dayjs(expectedReturnDateFormat).diff(dateNow,"hours");
+ const dateNow = this.dateProvider.dateNow()
+ const compare =  this.dateProvider.compareInHours(
+  dateNow,
+  expected_return_date
+  )
  if(compare < 24){
   throw new AppError("Invalid return time! ")
  }
