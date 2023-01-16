@@ -1,5 +1,6 @@
-import { ListAvailableCarsUseCase } from "./ListAvailableCarsUseCase"
-import { CarsRepositoryInMemory } from "../../repositories/In-memory/CarsRepositoryInMemory"
+import "reflect-metadata"
+import { ListAvailableCarsUseCase } from "./ListAvailableCarsUseCase";
+import { CarsRepositoryInMemory } from "../../repositories/In-memory/CarsRepositoryInMemory";
 let listAvailableCarsUseCase:ListAvailableCarsUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
 

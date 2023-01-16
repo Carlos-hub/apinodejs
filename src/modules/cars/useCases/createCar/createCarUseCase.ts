@@ -1,6 +1,7 @@
 import { Cars } from "@modules/cars/infra/typeorm/entities/Car";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { AppError } from "@shared/errors/AppError";
+import "reflect-metadata"
 import { injectable,inject } from "tsyringe"
 
 interface IRequest {
